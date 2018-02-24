@@ -1,0 +1,25 @@
+var results = document.getElementsByClassName("g");
+for (var i=0; i<results.length; i++) {
+	//results.item(i).insertBefore(icon,results.item(i).firstChild);
+	var element = results.item(i).firstChild;
+	if(!results.item(i).className.includes("rhs") && element.tagName != "G-SECTION-WITH-HEADER")
+	{
+		var icon = document.createElement("icon");
+		icon.innerText = "*icon goes here*";
+
+
+		results.item(i).firstChild.style = "display: inline-block; width: 90%;";
+		results.item(i).insertBefore(icon,results.item(i).firstChild);
+		results.item(i).firstChild.style = "background-color: red; display: inline-block; width: 10%; height: 100%;";
+
+
+
+	}
+		//appendChild("icon");
+	//icon.innerText = "*icon goes here*";
+	}
+
+
+var div = document.createElement("div");
+document.body.appendChild(div);
+div.innerText = "test123";
