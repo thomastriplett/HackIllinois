@@ -1,0 +1,64 @@
+var results = document.getElementsByClassName("g");
+for (var i=0; i<results.length; i++) {
+	//results.item(i).insertBefore(icon,results.item(i).firstChild);
+	var element = results.item(i).firstChild;
+	if(!results.item(i).className.includes("rhs") && element.tagName != "G-SECTION-WITH-HEADER")
+	{
+		var icon = document.createElement("icon");
+		var rating = 10;
+
+		var upvote = document.createElement("upvote");
+		upvote.innerText = "upvote";
+		upvote.addEventListener ("click", function() {
+  			alert("result upvoted");
+		});
+
+		var downvote = document.createElement("downvote");
+		downvote.src = "http://iconshow.me/media/images/ui/ios7-icons/png/48/arrow-down-a.png"
+		//downvote.innerText = "downvote";
+		downvote.addEventListener ("click", function() {
+			alert("result downvoted");
+		});
+
+
+		results.item(i).firstChild.style = "display: inline-block;";
+		//width: 90%;";
+		//results.item(i).insertBefore(downvote,results.item(i).firstChild);
+		//results.item(i).insertBefore(upvote,results.item(i).firstChild);
+		results.item(i).insertBefore(icon,results.item(i).firstChild);
+		if (rating > 0) {
+			icon.innerText = "Relevent";
+			results.item(i).firstChild.style = "background-color: lightgreen; display: inline-block; width: 10%; height: 100%;";
+			results.item(i).insertBefore(downvote,results.item(i).firstChild);
+			results.item(i).firstChild.style = "background-image: url('http://iconshow.me/media/images/ui/ios7-icons/png/48/arrow-down-a.png'); width: 20; height: 20;";
+			results.item(i).insertBefore(upvote,results.item(i).firstChild);
+			results.item(i).firstChild.style = "background-image: url(http://clipart-library.com/clipart/6cyorAKei.htm); width: 20; height: 20;";
+
+		}
+		else if (rating < 0) {
+			icon.innerText = "Irrelevent";
+			results.item(i).firstChild.style = "background-color: red; display: inline-block; width: 10%; height: 100%;";
+			results.item(i).insertBefore(downvote,results.item(i).firstChild);
+			results.item(i).firstChild.style = "background-image: url(https://www.freepik.com/free-icon/arrow-bold-down-ios-7-interface-symbol_751294.htm); width: 20; height: 20;";
+			results.item(i).insertBefore(upvote,results.item(i).firstChild);
+			results.item(i).firstChild.style = "background-image: url(https://www.freepik.com/free-icon/arrow-bold-down-ios-7-interface-symbol_751294.htm); width: 20; height: 20;";
+
+		}
+		else {
+			icon.innerText = "Borderline";
+			results.item(i).firstChild.style = "background-color: yellow; display: inline-block; width: 10%; height: 100%;";
+			results.item(i).insertBefore(downvote,results.item(i).firstChild);
+			results.item(i).firstChild.style = "background-image: url(https://www.freepik.com/free-icon/arrow-bold-down-ios-7-interface-symbol_751294.htm); width: 20; height: 20;";
+			results.item(i).insertBefore(upvote,results.item(i).firstChild);
+			results.item(i).firstChild.style = "background-image: url(https://www.freepik.com/free-icon/arrow-bold-down-ios-7-interface-symbol_751294.htm); width: 20; height: 20;";
+	
+		}
+	}
+}
+
+//var test = "";
+//chrome.storage.local.set({'lastVisited': document.referrer});
+//chrome.storage.local.get('lastVisited',function(result){
+//	test = result.lastVisited;
+	//alert(test);
+//});
